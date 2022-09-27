@@ -1,8 +1,8 @@
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import App from './App'
-import CustomTabs from './Tabs';
-import Forms from './Form'
+import MainTable from './components/MainTable'
+import CustomTabs from './components/tabs/Tabs';
+import Forms from './components/Form'
 
 const MainPage = () => {
     return (
@@ -16,7 +16,7 @@ const MainPage = () => {
             fill
             >
             <Tab eventKey="Main" title="All Games">
-                <App />
+                <MainTable />
             </Tab>
             <Tab eventKey="Second" title="Games by Console">
                 <CustomTabs />

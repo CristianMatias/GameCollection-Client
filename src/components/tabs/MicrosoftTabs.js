@@ -1,6 +1,6 @@
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import ConsoleTable from './ConsoleTable';
+import ConsoleTable from '../ConsoleTable';
 
 const MicrosoftTabs = () => {
     return (
