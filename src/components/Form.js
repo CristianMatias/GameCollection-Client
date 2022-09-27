@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Axios from "axios";
+import {submit} from '../services/Services'
 import { useState } from 'react';
 
 function CustomForm() {
@@ -8,16 +8,6 @@ function CustomForm() {
     const [platform, setPlatform] = useState("");
     const [region, setRegion] = useState("");
     const [developer, setDeveloper] = useState("");
-
-    function onSubmit() {
-        console.log(platform)
-        Axios.post("http://localhost:8080/game/Cristian", {
-            name: name,
-            platform: platform,
-            region: region,
-            developer: developer
-        })
-    };
 
   return (
       <div>
@@ -89,7 +79,7 @@ function CustomForm() {
                     <option value={"NTSC-U"}>NTSC-U</option>
                 </Form.Select>
             </Form.Group>
-            <Button onClick={() => onSubmit()} variant="primary" type="submit">
+            <Button onClick={() => submit(name, platform, region, developer)} variant="primary" type="submit">
                 Enviar
             </Button>
         </Form>

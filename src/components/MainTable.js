@@ -1,15 +1,14 @@
-import Axios from "axios";
 import { useEffect, useState } from 'react';
 import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
+import {getGames} from '../services/Services';
 
 const MainTable = () => {
-  const requestEndpoint = "http://localhost:8080/game/Cristian";
   const [games, setGames] = useState([]);
   const [totalGames, setTotal] = useState();
 
   const fetchData = async () => {
-    const { data } = await Axios.get(requestEndpoint);
+    const { data } = await getGames();
     setGames(data.listGames);
     setTotal(data.totalGames);
   };
